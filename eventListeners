@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>adding event listeners</title>
+    <link rel="stylesheet" href="event1.css">
+</head>
+     <style>
+     
+     
+     .grand-parent{
+    background-color: red;
+    height: 300px;
+    width: 300px;
+    display: grid;
+    justify-content: center;
+    align-items: center;
+}
+.parent{
+    background-color: green;
+    width: 200px;
+    height: 200px;
+    display: grid;
+    justify-content: center;
+    align-items: center;
+}
+.child{
+    background-color: black;
+    width: 100px;
+    height: 100px;
+}
+     
+     
+     </style>
+<body>
+     <div class="grand-parent">
+        <div class="parent">
+            <div class="child">
+
+            </div>
+        </div>
+     </div>
+</body>
+  <script>
+  
+        const grandparent =document.querySelector('.grand-parent');
+const child = document.querySelector('.child');
+const parent = document.querySelector('.parent');
+
+grandparent.addEventListener('click', e =>{
+ console.log('grandParent1'),{capture:true};
+});
+child.addEventListener('mouseover', click =>{
+    console.log('parent1'),{capture:true};
+});
+parent.addEventListener('mousedown', click1 =>{
+    console.log('child'),{capture:true};
+})
+  
+  </script>
+</html>
